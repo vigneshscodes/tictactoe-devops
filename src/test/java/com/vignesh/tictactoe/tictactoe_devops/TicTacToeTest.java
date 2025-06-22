@@ -51,4 +51,23 @@ public class TicTacToeTest {
         TicTacToeMain.board = new String[][] { {"X", "O", "X"}, {"O", "X", "O"}, {"O", "X", "O"} };
         assertFalse(TicTacToeMain.checkWin("X"));
     }
+    @Test
+    public void testXWinsFullMoves() {
+        TicTacToeMain.board = new String[][] { {"1","2","3"}, {"4","5","6"}, {"7","8","9"} };
+        TicTacToeMain.enteredNumbers = new int[9];
+        TicTacToeMain.moveCount = 0;
+        updateBoardForTest("X", 1);
+        updateBoardForTest("O", 4);
+        updateBoardForTest("X", 2);
+        updateBoardForTest("O", 5);
+        updateBoardForTest("X", 3);
+        assertTrue(TicTacToeMain.checkWin("X"), "X should win with top row");
+    }
+    private void updateBoardForTest(String symbol, int pos) {
+        TicTacToeMain.enteredNumbers[TicTacToeMain.moveCount] = pos;
+        int row = (pos - 1) / 3;
+        int col = (pos - 1) % 3;
+        TicTacToeMain.board[row][col] = symbol;
+        TicTacToeMain.moveCount++;
+    }
 }
