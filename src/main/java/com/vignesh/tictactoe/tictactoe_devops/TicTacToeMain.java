@@ -1,4 +1,4 @@
-package com.vignesh.tictactoe;
+package com.vignesh.tictactoe.tictactoe_devops;
 import java.util.Scanner;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
