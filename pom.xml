@@ -48,7 +48,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.vignesh.tictactoe.TicTacToeMain</mainClass>
+              <mainClass>com.vignesh.tictactoe.tictactoe_devops.TicTacToeMain</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
