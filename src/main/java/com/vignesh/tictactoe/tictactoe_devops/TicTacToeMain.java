@@ -1,4 +1,4 @@
-package com.vignesh.tictactoe;
+package com.vignesh.tictactoe.tictactoe_devops;
 import java.util.Scanner;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -15,8 +15,14 @@ public class TicTacToeMain{
         printBoard();
         while (moveCount<9){
             String symbol=(moveCount%2==0)?"X":"O";
-            logger.info("Enter "+symbol+" position:");
-            String input = in.nextLine();
+            String input;
+            if (args.length > moveCount) {
+                input = args[moveCount];
+                logger.info("Auto input for " + symbol + ": " + input);
+            } else {
+                logger.info("Enter " + symbol + " position:");
+                input = in.nextLine();
+            }
             if (!isNumber(input)){
                 logger.info("Invalid input! Enter a number between 1 and 9.");
                 continue;
