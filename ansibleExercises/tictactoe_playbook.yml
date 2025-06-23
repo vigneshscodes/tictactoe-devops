@@ -1,0 +1,20 @@
+---
+- name: Deploy and run TicTacToe app
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Copy TicTacToe JAR to /home/vignesh-s/tictactoe-run
+      copy:
+        src: files/tictactoe-devops-0.1-jar-with-dependencies.jar
+        dest: /home/vignesh-s/tictactoe-run/tictactoe-devops-0.1-jar-with-dependencies.jar
+        mode: '0755'
+
+    - name: Run TicTacToe with predefined moves and save output
+      command: >
+        java -jar /home/vignesh-s/tictactoe-run/tictactoe-devops-0.1-jar-with-dependencies.jar 1 4 2 5 3
+      register: game_output
+
+    - name: Save game result to file
+      copy:
+        content: "{{ game_output.stdout }}"
+        dest: /home/vignesh-s/tictactoe-run/tictactoe_result.txt
