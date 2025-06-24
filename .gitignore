@@ -6,3 +6,11 @@ target/
 *.iml
 .vscode/
 
+monitoring/nagios/libexec/*
+monitoring/nagios/var/*
+monitoring/graphite/data/*
+monitoring/grafana/data/*
+
+monitoring/docker-volumes/
+
+*.log
