@@ -5,7 +5,7 @@
   tasks:
     - name: Copy TicTacToe JAR to /home/vignesh-s/tictactoe-run
       copy:
-        src: files/tictactoe-devops-0.1-jar-with-dependencies.jar
+        src: tictactoe-devops-0.1-jar-with-dependencies.jar
         dest: /home/vignesh-s/tictactoe-run/tictactoe-devops-0.1-jar-with-dependencies.jar
         mode: '0755'
 
