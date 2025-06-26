@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'git@github.com:vigneshscodes/tictactoe-devops.git'
+        git branch: 'main', url: 'git@github.com:vigneshscodes/tictactoe-devops.git'
       }
     }
 
