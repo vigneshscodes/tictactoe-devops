@@ -27,7 +27,7 @@ pipeline {
 
     stage('Docker Build') {
       steps {
-        sh 'docker build -t tictactoe-app dockerExercises/'
+        sh 'docker build -t tictactoe-app .'
       }
     }
 
