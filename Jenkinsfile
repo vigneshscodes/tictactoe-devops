@@ -49,7 +49,7 @@ pipeline {
 
     stage('Send Metric to Graphite') {
       steps {
-        sh 'echo "tictactoe.deploy.success 1 $(date +%s)" | nc 172.19.0.2 2003'
+        sh 'echo "tictactoe.deploy.success 1 $(date +%s)" | nc -w 2 172.19.0.2 2003'
       }
     }
   }
@@ -63,4 +63,5 @@ pipeline {
     }
   }
 }
+
 
