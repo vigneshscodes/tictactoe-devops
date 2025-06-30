@@ -31,7 +31,3 @@ The pipeline includes:
 - `Dockerfile`: Builds the application image
 - `docker-compose.yml`: Sets up monitoring containers
 - `ansibleExercises/`: Ansible playbook and inventory
-
-## Notes
-
-Graphite and Grafana are configured to visualize deployment metrics. The Grafana dashboard can be set up manually by importing a JSON model.
